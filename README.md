@@ -16,12 +16,12 @@
 ## 1. Difference Between
 
 ```text
-`input.value`
+input.value
 ```
 and
 
 ```text
-`input.getAttribute("value")`
+input.getAttribute("value")
 ```
 
 The main difference is that `input.value` gives the current value of the input, so it changes when the user types something.
@@ -32,7 +32,6 @@ So basically:
 ```text
 input.value                  -> current DOM value
 input.getAttribute("value")  -> HTML attribute value
-
 ```
 
 ---
@@ -193,7 +192,7 @@ This results in something similar to:
 
 ---
 
-## 7. Features
+## 7. Features of Task Manager
 
 The Task Manager currently includes:
 
@@ -220,5 +219,5 @@ The Task Manager currently includes:
 ```text
 HTML
 CSS
-Vanilla JavaScript
+JavaScript
 ```
