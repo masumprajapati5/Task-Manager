@@ -15,11 +15,14 @@
 
 ## 1. Difference Between
 
+```text
 `input.value`
-
+```
 and
 
+```text
 `input.getAttribute("value")`
+```
 
 The main difference is that `input.value` gives the current value of the input, so it changes when the user types something.
 
