@@ -1,0 +1,702 @@
+:root {
+    --primary: #202020;
+    --accent: #202020;
+    --secondary: #e8e8e5;
+    --background: #f5f5f2;
+    --text: #202020;
+    --card: #ffffff;
+    --success: #4f6f52;
+    --muted: #777777;
+    --border: #dededb;
+}
+
+body.dark {
+    --primary: #eeeeec;
+    --accent: #8da58f;
+    --secondary: #363636;
+    --background: #181818;
+    --text: #eeeeec;
+    --card: #222222;
+    --success: #8da58f;
+    --muted: #999999;
+    --border: #363636;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+
+/* Navbar */
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+nav h1 {
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: -0.5px;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav button {
+    height: 40px;
+    border: 1px solid var(--border);
+    padding: 0 14px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+nav button:hover {
+    background: #f1f1ef;
+}
+
+#themeToggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#themeToggle i {
+    font-size: 16px;
+}
+
+#addTask {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--text);
+    color: var(--card);
+    border-color: var(--text);
+}
+
+#addTask i {
+    font-size: 17px;
+}
+
+#addTask:hover {
+    background: #444444;
+    color: #ffffff;
+}
+
+
+/* Search and Filters */
+
+.search-filter {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.search i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--muted);
+    pointer-events: none;
+}
+
+.search input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px 0 42px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+    font-size: 15px;
+}
+
+.search input::placeholder {
+    color: var(--muted);
+}
+
+.search input:focus {
+    border-color: var(--text);
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.filter select {
+    height: 44px;
+    padding: 0 36px 0 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-btn {
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: var(--text);
+    color: var(--card);
+    border-color: var(--text);
+}
+
+
+/* Stats */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 30px;
+    text-align: left;
+}
+
+.stat-card h3 {
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.stat-card p {
+    color: var(--text);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+
+/* Tasks */
+
+main {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    transition: border-color 0.2s ease;
+}
+
+.task:hover {
+    border-color: #aaaaaa;
+}
+
+.task h1 {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.task div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.task div:first-child p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.task div:first-child p:first-of-type {
+    width: fit-content;
+    background: #eeeeec;
+    color: #444444;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.task div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.task div:last-child p {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+
+/* Task Buttons */
+
+.edit-btn {
+    background: #fff4df;
+    color: #202020;
+}
+
+.edit-btn:hover {
+    background: #ffedcc;
+}
+
+.delete-btn {
+    background: #ffe8e8;
+    color: #202020;
+}
+
+.delete-btn:hover {
+    background: #ffdede;
+}
+
+.complete-btn {
+    background: #e8f7e8;
+    color: #202020;
+}
+
+.complete-btn:hover {
+    background: #dcf1dc;
+}
+
+
+/* Task Status */
+
+.completed {
+    border-color: #b8ceb9;
+}
+
+.completed h1 {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.done {
+    color: var(--success) !important;
+    font-weight: 600 !important;
+}
+
+.pending {
+    color: #a66a2c !important;
+    font-weight: 600 !important;
+}
+
+
+/* Form */
+
+.form {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.form-card {
+    width: 90%;
+    max-width: 450px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-card h2 {
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 6px;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+}
+
+.form-card input::placeholder {
+    color: var(--muted);
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    border-color: var(--text);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.actions button {
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.cancel {
+    background: transparent;
+    color: var(--text);
+}
+
+.cancel:hover {
+    background: #f1f1ef;
+}
+
+.save {
+    background: var(--text);
+    color: var(--card);
+    border-color: var(--text) !important;
+}
+
+.save:hover {
+    background: #444444;
+    color: #ffffff;
+}
+
+
+/* Empty State */
+
+.empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* Dark Mode */
+
+body.dark nav button:hover {
+    background: #303030;
+}
+
+body.dark #addTask {
+    background: #eeeeec;
+    color: #181818;
+    border-color: #eeeeec;
+}
+
+body.dark #addTask:hover {
+    background: #d8d8d5;
+}
+
+body.dark .search-filter {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+body.dark .search input {
+    background: var(--card);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.dark .search input::placeholder {
+    color: var(--muted);
+}
+
+body.dark .filter select {
+    background: var(--card);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.dark .filter-btn {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.dark .filter-btn:hover {
+    background: var(--text);
+    color: var(--background);
+    border-color: var(--text);
+}
+
+body.dark .stat-card {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+body.dark main {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+body.dark .task {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+body.dark .task:hover {
+    border-color: #555555;
+}
+
+body.dark .task div:first-child p:first-of-type {
+    background: #363636;
+    color: #dddddd;
+}
+
+body.dark .completed {
+    border-color: #526b55;
+}
+
+body.dark .done {
+    color: var(--success) !important;
+}
+
+body.dark .pending {
+    color: #d5a060 !important;
+}
+
+body.dark .form-card {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+body.dark .form-card input,
+body.dark .form-card select {
+    background: var(--card);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.dark .cancel {
+    background: transparent;
+    color: var(--text);
+}
+
+body.dark .cancel:hover {
+    background: #303030;
+}
+
+body.dark .save {
+    background: #eeeeec;
+    color: #181818;
+    border-color: #eeeeec !important;
+}
+
+body.dark .save:hover {
+    background: #d8d8d5;
+}
+
+body.dark .edit-btn {
+    background: #fff4df;
+    color: #202020;
+}
+
+body.dark .delete-btn {
+    background: #ffe8e8;
+    color: #202020;
+}
+
+body.dark .complete-btn {
+    background: #e8f7e8;
+    color: #202020;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    nav {
+        min-height: auto;
+        padding: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    nav div {
+        width: 100%;
+    }
+
+    nav button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .search-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .filter {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter select {
+        width: 100%;
+        grid-column: 1 / -1;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    #allBtn {
+        grid-column: 1 / -1;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task div:last-child {
+        width: 100%;
+    }
+
+    .task div:last-child p {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    nav h1 {
+        font-size: 18px;
+    }
+
+    .filter {
+        grid-template-columns: 1fr;
+    }
+
+    .filter select,
+    #allBtn {
+        grid-column: auto;
+    }
+
+    .task div:last-child {
+        flex-direction: column;
+    }
+
+    .task div:last-child p {
+        width: 100%;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}
