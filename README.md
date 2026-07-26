@@ -7,17 +7,9 @@
   <img src="./asset/dark.png" width="49%" alt="Task Manager Dark Mode">
 </div>
 
-## Live Demo
+## 🚀 Live Demo
 
-Add your live project link here:
-
-`YOUR_LIVE_DEMO_LINK`
-
-## GitHub Repository
-
-Add your repository link here:
-
-`https://github.com/masumprajapati5/Task-Manager`
+[![Live Demo](https://img.shields.io/badge/Live-Demo-black?style=for-the-badge&logo=vercel)](https://task-manager-one-alpha-76.vercel.app/)
 
 ---
 
@@ -157,149 +149,9 @@ Bubbling  -> Target to Parent
 
 ## 3. Browser Rendering Pipeline
 
-The browser cannot directly display HTML and CSS as we write them.
-
-It processes the files through multiple steps before showing the final webpage.
-
-### HTML Process
-
-First the browser receives the HTML.
-
-```text
-HTML
- ↓
-Tokenization
- ↓
-Parsing
- ↓
-DOM Tree
-```
-
-### Tokenization
-
-The HTML code is broken into smaller tokens.
-
-For example:
-
-```html
-<h1>Task Manager</h1>
-```
-
-contains information such as:
-
-```text
-Opening h1 tag
-Text
-Closing h1 tag
-```
-
-### Parsing
-
-The browser processes these tokens and understands the relationship between the elements.
-
-It then creates the DOM.
-
-### DOM Tree
-
-DOM stands for **Document Object Model**.
-
-HTML is represented as a tree of objects.
-
-Example:
-
-```text
-Document
-   ↓
-HTML
- ├── Head
- └── Body
-      ├── Nav
-      ├── Section
-      └── Main
-```
-
-JavaScript can then access and manipulate these DOM elements.
-
-For example:
-
-```js
-document.querySelector("#allTasks");
-```
-
----
-
-## 4. CSSOM Tree
-
-CSS also goes through processing.
-
-```text
-CSS
- ↓
-Tokenization
- ↓
-Parsing
- ↓
-CSSOM Tree
-```
-
-CSSOM stands for **CSS Object Model**.
-
-It contains the styling information required by the browser.
-
-After the DOM and CSSOM are ready, the browser combines them.
-
-```text
-DOM Tree + CSSOM Tree
-          ↓
-      Render Tree
-```
-
----
-
-## 5. Render Tree
-
-The Render Tree contains the elements that need to be displayed along with their calculated styles.
-
-After creating the Render Tree, the browser continues with:
-
-```text
-DOM + CSSOM
-     ↓
-Render Tree
-     ↓
-Layout
-     ↓
-Paint
-     ↓
-Composite
-```
-
-### Layout
-
-The browser calculates the size and position of elements.
-
-For example:
-
-- width
-- height
-- position
-- spacing
-
-### Paint
-
-After layout, the browser draws the visual parts of the webpage such as:
-
-- text
-- backgrounds
-- borders
-- buttons
-- shadows
-
-### Composite
-
-Some elements can be placed on separate layers, especially when properties such as `transform` and `opacity` are involved.
-
-The browser then combines these layers to produce the final image displayed on the screen.
+<div align="center">
+  <img src="./asset/image.png" alt=" Screenshot" width="900">
+</div>
 
 ---
 
@@ -366,7 +218,4 @@ The Task Manager currently includes:
 HTML
 CSS
 Vanilla JavaScript
-Local Storage
 ```
-
-No JavaScript framework is used.
