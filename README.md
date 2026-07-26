@@ -21,73 +21,23 @@ Add your repository link here:
 
 ---
 
-## 1. Attributes vs Properties
+## 1. Difference Between
 
-There is a difference between:
-
-```js
-input.value
-```
+`input.value`
 
 and
 
-```js
-input.getAttribute("value")
-```
+`input.getAttribute("value")`
 
-`input.value` is a DOM property. It gives us the current value of the input.
+The main difference is that `input.value` gives the current value of the input, so it changes when the user types something.
 
-For example, if the user types something inside the input:
-
-```js
-console.log(input.value);
-```
-
-it returns what the user has currently entered.
-
-On the other hand:
-
-```js
-console.log(input.getAttribute("value"));
-```
-
-reads the `value` attribute that was originally written in the HTML.
-
-Example:
-
-```html
-<input type="text" value="Task 1">
-```
-
-If the user changes `Task 1` to `Task 2`:
-
-```js
-input.value
-```
-
-will return:
-
-```text
-Task 2
-```
-
-while:
-
-```js
-input.getAttribute("value")
-```
-
-can still return:
-
-```text
-Task 1
-```
+On the other hand, `input.getAttribute("value")` reads the value that was originally set in the HTML attribute and does not automatically change with user input.
 
 So basically:
-
 ```text
 input.value                  -> current DOM value
 input.getAttribute("value")  -> HTML attribute value
+
 ```
 
 ---
