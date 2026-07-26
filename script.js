@@ -2,24 +2,19 @@ const form = document.querySelector("#form");
 const addTaskBtn = document.querySelector("#addTask");
 const cancelForm = document.querySelector("#cancelForm");
 const saveForm = document.querySelector("#saveForm");
-
 const taskTitle = document.querySelector("#taskTitle");
 const taskCategory = document.querySelector("#taskCategory");
-
 const allTasks = document.querySelector("#allTasks");
-
 const searchInput = document.querySelector("#searchInput");
 const categoryFilter = document.querySelector("#categoryFilter");
-
 const allBtn = document.querySelector("#allBtn");
 const completedBtn = document.querySelector("#completedBtn");
 const pendingBtn = document.querySelector("#pendingBtn");
-
 const totalCount = document.querySelector("#totalCount");
 const completedCount = document.querySelector("#completedCount");
 const pendingCount = document.querySelector("#pendingCount");
-
 const formHeading = document.querySelector("#formHeading");
+const task = document.querySelector(".task");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -62,7 +57,6 @@ function handleCounters() {
 function renderTasks(tasksToRender) {
   allTasks.innerHTML = "";
 
-  // no task available
   if (tasksToRender.length === 0) {
     allTasks.innerHTML = `
       <div class="empty">
@@ -73,7 +67,7 @@ function renderTasks(tasksToRender) {
     return;
   }
 
-  // render available tasks
+
   tasksToRender.forEach((x) => {
 
     const card = document.createElement("div");
@@ -81,6 +75,7 @@ function renderTasks(tasksToRender) {
 
     if (x.status === "Completed") {
       card.classList.add("completed");
+    //   card.style.backgroundColor = "#e8f7e8";
     }
 
     card.dataset.id = x.id;
@@ -253,6 +248,7 @@ pendingBtn.addEventListener("click", () => {
 });
 
 applyFilters();
+
 
 //Theme
 const themeToggle = document.querySelector("#themeToggle");
