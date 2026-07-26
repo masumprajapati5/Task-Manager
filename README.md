@@ -9,7 +9,7 @@
 
 ## 🚀 Live Demo
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-black?style=for-the-badge&logo=vercel)](https://task-manager-one-alpha-76.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-black?style=for-the-badge&logo=github)](https://masumprajapati5.github.io/Task-Manager/)
 
 ---
 
