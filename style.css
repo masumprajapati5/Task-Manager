@@ -668,6 +668,7 @@ nav button {
     nav button {
         height: 38px;
         padding: 0 11px;
+        /* margin: 0; */
     }
 
     #addTask {
