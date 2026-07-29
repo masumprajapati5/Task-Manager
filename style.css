@@ -340,6 +340,7 @@ main {
 
 .pending {
     color: #c32400 !important;
+    /* font-size: 14px; */
     font-weight: 600 !important;
 }
 
