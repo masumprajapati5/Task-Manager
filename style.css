@@ -320,6 +320,7 @@ main {
 }
 
 .complete-btn:hover {
+    /* color: #202020; */
     background: #dcf1dc;
 }
 
